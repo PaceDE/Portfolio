@@ -19,7 +19,7 @@ const GetInTouch = async () => {
             
                 <Box sx={{ width: { xs: "100%", md: "50%" } }}  marginTop={3} >
                     <Body>
-                       Looking for a junior role, internship, or freelance project. If you're hiring or just want to talk, feel free to reach out.
+                       Looking for a junior role, or freelance project. If you're hiring or just want to talk, feel free to reach out.
                     </Body>
                 </Box>
 
