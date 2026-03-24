@@ -1,12 +1,11 @@
 import { Box } from "@mui/material"
-import { Profile } from "@/types"
-import { fetchData } from "@/utils/fetchData"
 import Body from "../atoms/Text/Body"
 import SectionHeading from "../molecules/SectionHeading"
+import { getProfile } from "@/lib/db"
 
 const BASE_URL = process.env.BASE_URL as string
 const AboutMe = async () => {
-    const profile = await fetchData<Profile>(`${BASE_URL}/api/profile`)
+    const profile = await getProfile();
     return (
         <Box>
             <SectionHeading caption="01 - About Me" title="Who am I"/>

@@ -1,12 +1,11 @@
-import { Experience as ExperienceType } from '@/types'
-import { fetchData } from '@/utils/fetchData'
 import { Box } from '@mui/material'
 import SectionHeading from '../molecules/SectionHeading'
 import ExperienceCard from '../molecules/ExperienceCard'
+import { getExperience } from '@/lib/db'
 
 const BASE_URL = process.env.BASE_URL
 const Experience = async () => {
-    const experience = await fetchData<ExperienceType[]>(`${BASE_URL}/api/experience`)
+    const experience = await getExperience();
     return (
         <Box>
             <SectionHeading caption="05 - Experience" title="Where I've worked"/>

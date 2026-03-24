@@ -1,8 +1,6 @@
 import { Box, Button } from "@mui/material"
 import Caption from "../atoms/Text/Caption"
 import Heading from "../atoms/Text/Heading"
-import { fetchData } from "@/utils/fetchData"
-import { Profile } from "@/types"
 import Body from "../atoms/Text/Body"
 import profileImage from "@/assest/profile.jpg"
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
@@ -10,10 +8,11 @@ import ExternalLink from "../molecules/ExternalLink"
 import { FaGithub } from "react-icons/fa"
 import { FaLinkedin } from "react-icons/fa";
 import ScrollIndicator from "../molecules/ScrollIndicator"
+import { getProfile } from "@/lib/db"
 
 const BASE_URL = process.env.BASE_URL as string
 const HeroSection = async () => {
-    const profile = await fetchData<Profile>(`${BASE_URL}/api/profile`)
+    const profile = await getProfile();
 
     return (
         <Box>

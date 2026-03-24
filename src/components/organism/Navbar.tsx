@@ -1,6 +1,5 @@
 "use client"
-import { Box, Menu, Typography } from '@mui/material'
-import MenuIcon from '@mui/icons-material/Menu';
+import { Box } from '@mui/material'
 import Boldtext from '../atoms/Text/Boldtext';
 import Topbar from '../molecules/Topbar';
 import ThemeSwitch from '../molecules/ThemeSwitch';

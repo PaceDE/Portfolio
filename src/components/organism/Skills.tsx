@@ -1,14 +1,12 @@
-import { Skills as SkillType } from '@/types'
-import { fetchData } from '@/utils/fetchData'
 import { Box } from '@mui/material'
 import SectionHeading from '../molecules/SectionHeading'
 import SkillCard from '../molecules/SkillCard'
 import Caption from '../atoms/Text/Caption'
-//import SkillsCard from '../molecules/SkillsCard'
+import { getSkills } from '@/lib/db'
 
 const BASE_URL = process.env.BASE_URL
 const Skills = async () => {
-    const skills = await fetchData<SkillType[]>(`${BASE_URL}/api/skills`)
+    const skills = await getSkills();
     return (
         <Box>
             <SectionHeading caption="03 - Skills" title="What I work with"/>
