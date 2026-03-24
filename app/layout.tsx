@@ -35,8 +35,22 @@ export default function RootLayout({
       lang="en"
       className={`h-full ${fraunces.variable} ${ibmPlexMono.variable} ${epilogue.variable}`}
       suppressHydrationWarning
-    >
+    >  
       <body className='min-h-full'>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var theme = localStorage.getItem('theme');
+                  if (theme !== 'light') {
+                    document.documentElement.classList.add('dark');
+                  }
+                } catch(e) {}
+              })();
+            `,
+          }}
+        />
         <ThemeProvider>
           {children}
         </ThemeProvider>

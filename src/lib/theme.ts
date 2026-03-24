@@ -16,6 +16,8 @@ const theme = createTheme({
         h2: { fontFamily: 'var(--font-fraunces)' }, // section titles
         h3: { fontFamily: 'var(--font-fraunces)' }, // card titles
         h4: { fontFamily: 'var(--font-fraunces)' }, // sub headings
+        h5: { fontFamily: 'var(--font-fraunces)' }, // sub headings
+        h6: { fontFamily: 'var(--font-fraunces)' }, // Bold text
         caption: { fontFamily: 'var(--font-mono)' }, // labels, dates
     },
     colorSchemes: {
@@ -30,8 +32,8 @@ const theme = createTheme({
                 },
                 text: {
                     primary: '#1a1916',  // headings, important text
-                    secondary: '#7a7264',  // labels, dates
-                    description: '#5a5248',  // body text, descriptions
+                    description: '#7a7264', // body text, descriptions 
+                    secondary: '#5a5248',  // labels, dates
                 },
                 divider: 'rgba(0,0,0,0.07)',  // borders, dividers
             },
@@ -40,15 +42,15 @@ const theme = createTheme({
             palette: {
                 primary: { main: '#c8b89a' },               // buttons hover, links
                 secondary: { main: 'rgba(200,184,154,0.08)' }, // dark
-                success: { main: '#5a8a6a' },
+                success: { main: '#618d6f' },
                 background: {
                     default: '#0d0d0d',  // page background
                     paper: '#181818',  // card, component background
                 },
                 text: {
                     primary: '#e8e6df',  // headings, important text
-                    secondary: '#7a7870',  // labels, dates
-                    description: '#a09e97',  // body text, descriptions
+                    description: '#7a7870', // body text, descriptions 
+                    secondary: '#a09e97',  // labels, dates
                 },
                 divider: 'rgba(255,255,255,0.08)',  // borders, dividers
             },

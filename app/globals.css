@@ -1,27 +1,33 @@
 @import "tailwindcss";
 
 :root {
-  --bg:          #f7f5f0;  /* page background */
-  --surface:     #ffffff;  /* card, component background */
-  --border:      rgba(0,0,0,0.07);  /* dividers, borders */
-  --text:        #1a1916;  /* headings, important text */
-  --soft:        #5a5248;  /* body text, descriptions */
-  --muted:       #7a7264;  /* labels, dates... */
-  --accent:      #8a6c4a;  /* buttons hover, links */
-  --accent-dim:  rgba(138,108,74,0.07);  /* dark */
-  --green:       #3a6a4a;
+  --bg: #f7f5f0; /* page background */
+  --bg2: #e8e4db;
+  --bg3: #0d0d0d;
+  --surface: #ffffff; /* card, component background */
+  --border: rgba(0, 0, 0, 0.07); /* dividers, borders */
+  --text: #1a1916; /* headings, important text primary*/
+  --text2: #e8e6df;
+  --soft: #5a5248; /* body text, descriptions description*/
+  --muted: #7a7264; /* labels, dates... secondary*/
+  --accent: #8a6c4a; /* buttons hover, links */
+  --accent-dim: rgba(138, 108, 74, 0.07); /* light */
+  --green: #3a6a4a;
 }
 
 .dark {
-  --bg:          #f7f5f0;  /* page background */
-  --surface:     #181818;  /* card, component background */
-  --border:      rgba(255,255,255,0.08);  /* dividers, borders */
-  --text:        #e8e6df;  /* headings, important text */
-  --soft:        #a09e97;  /* body text, descriptions */
-  --muted:       #7a7870;  /* labels, dates... */
-  --accent:      #c8b89a;  /* buttons hover, links */
-  --accent-dim:  rgba(200,184,154,0.08);  /* dark */
-  --green:       #5a8a6a;
+  --bg: #0d0d0d; /* page background */
+  --bg2:  #1c1c1c;
+  --bg3: #f7f5f0;
+  --surface: #181818; /* card, component background */
+  --border: rgba(255, 255, 255, 0.08); /* dividers, borders */
+  --text: #e8e6df; /* headings, important text */
+  --text2: #1a1916;
+  --soft: #a09e97; /* body text, descriptions */
+  --muted: #7a7870; /* labels, dates... */
+  --accent: #c8b89a; /* buttons hover, links */
+  --accent-dim: rgba(200, 184, 154, 0.08); /* light */
+  --green: #618d6f;
 }
 
 * {
@@ -43,10 +49,25 @@ body {
   transition: background 0.3s, color 0.3s;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: var(--font-fraunces), serif;
 }
 
-code, pre, .mono {
+code,
+pre,
+.mono {
   font-family: var(--font-mono), monospace;
+}
+
+@keyframes scrollDot {
+  0%   { transform: translateY(0);    opacity: 1;   }
+  50%  { transform: translateY(35px); opacity: 0.3; }
+  100% { transform: translateY(0);    opacity: 1;   }
+}
+
+.scroll-dot {
+  animation: scrollDot 5s ease-in-out infinite;
 }
