@@ -10,6 +10,8 @@ import { FaLinkedin } from "react-icons/fa";
 import ScrollIndicator from "../molecules/ScrollIndicator"
 import { fetchData } from "@/utils/fetchData"
 import { Profile } from "@/types"
+import Label from "../atoms/Button/Label"
+import CVDownload from "../molecules/CVDownload"
 
 const BASE_URL = process.env.BASE_URL as string
 const HeroSection = async () => {
@@ -17,7 +19,7 @@ const HeroSection = async () => {
     const profile = await fetchData<Profile>(`${BASE_URL}/api/profile`);
 
     return (
-        <Box>
+        <Box sx={{ width: { xs: "100%", md: "70%" } }}>
             <Button className="animate-pulse" sx={{ marginBottom: 2, textTransform: "none", borderBottom: 1, borderColor: 'divider' }}>
                 <Caption sx={{ color: profile?.working ? "red" : "success.main" }}>{profile?.working ? "Currently Employed" : "Open to Work"}</Caption>
             </Button>
@@ -32,13 +34,13 @@ const HeroSection = async () => {
                         <Heading sx={{ color: "primary.main", fontStyle: "italic" }}>based in Kathmandu.</Heading>
                     </Box>
                 </Box>
-                <Box sx={{ marginLeft:2, width: { xs: "100%", md: "50%" } }}  marginTop={3} >
+                <Box sx={{ marginLeft: 2, width: { xs: "100%", md: "50%" } }} marginTop={3} >
                     <Body>
                         I build web apps using React, Next.js, and Node.js. About 2 years in, still learning, always growing.
                     </Body>
                 </Box>
 
-                <Box sx={{marginLeft:2}} display={"flex"} gap={2}>
+                <Box sx={{ marginLeft: 2, flexWrap:"wrap" }} display={"flex"} gap={2}>
                     {profile?.email && (
                         <ExternalLink label={profile.email} url={`mailto:${profile.email}`} icon={<EmailOutlinedIcon sx={{ fontSize: 14 }} />} />
                     )}
@@ -49,6 +51,10 @@ const HeroSection = async () => {
                         <ExternalLink label={`linkedin/${profile.linkedin.split('/').at(-2)}`} url={profile.linkedin} icon={<FaLinkedin size={14} />} />
                     )}
                 </Box>
+                <Box marginLeft={3}>
+                    <CVDownload/>
+                </Box>
+
             </Box>
 
             <ScrollIndicator />

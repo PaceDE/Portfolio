@@ -26,7 +26,7 @@ const PortfolioTemplate = () => {
         <Navbar />
       </Box>
 
-      <Box sx={{ display: "grid", gap: 10, marginBottom: 15 }}>
+      <Box sx={{ display: "flex", flexDirection:"column", alignItems:"center", gap: 10, marginBottom: 15 }}>
         <HeroSection />
         <Divider />
       </Box>
