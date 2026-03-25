@@ -9,10 +9,12 @@ import { FaGithub } from "react-icons/fa"
 import { FaLinkedin } from "react-icons/fa";
 import ScrollIndicator from "../molecules/ScrollIndicator"
 import { getProfile } from "@/lib/db"
+import { fetchData } from "@/utils/fetchData"
+import { Profile } from "@/types"
 
 const BASE_URL = process.env.BASE_URL as string
 const HeroSection = async () => {
-    const profile = await getProfile();
+    const profile = await fetchData<Profile>('/api/profile');
 
     return (
         <Box>
