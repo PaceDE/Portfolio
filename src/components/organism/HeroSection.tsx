@@ -14,7 +14,8 @@ import { Profile } from "@/types"
 
 const BASE_URL = process.env.BASE_URL as string
 const HeroSection = async () => {
-    const profile = await fetchData<Profile>('/api/profile');
+
+    const profile = await fetchData<Profile>(`${BASE_URL}/api/profile`);
 
     return (
         <Box>
