@@ -8,7 +8,6 @@ import ExternalLink from "../molecules/ExternalLink"
 import { FaGithub } from "react-icons/fa"
 import { FaLinkedin } from "react-icons/fa";
 import ScrollIndicator from "../molecules/ScrollIndicator"
-import { getProfile } from "@/lib/db"
 import { fetchData } from "@/utils/fetchData"
 import { Profile } from "@/types"
 

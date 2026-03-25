@@ -1,11 +1,12 @@
 import { Box } from '@mui/material'
 import EducationCard from '../molecules/EducationCard'
 import SectionHeading from '../molecules/SectionHeading'
-import { getEducation } from '@/lib/db'
+import { fetchData } from '@/utils/fetchData'
+import { Education as EducationType} from '@/types'
 
 const BASE_URL = process.env.BASE_URL
 const Education = async () => {
-    const educations = await getEducation();
+    const educations = await fetchData<EducationType[]>(`${BASE_URL}/api/education`);
     return (
         <Box>
             <SectionHeading caption="02 - Education" title="Academic Background"/>

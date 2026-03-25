@@ -2,11 +2,12 @@ import { Box } from '@mui/material'
 import SectionHeading from '../molecules/SectionHeading'
 import SkillCard from '../molecules/SkillCard'
 import Caption from '../atoms/Text/Caption'
-import { getSkills } from '@/lib/db'
+import { fetchData } from '@/utils/fetchData'
+import { Skills as SkillType} from '@/types'
 
 const BASE_URL = process.env.BASE_URL
 const Skills = async () => {
-    const skills = await getSkills();
+    const skills = await fetchData<SkillType[]>(`${BASE_URL}/api/skills`);
     return (
         <Box>
             <SectionHeading caption="03 - Skills" title="What I work with"/>

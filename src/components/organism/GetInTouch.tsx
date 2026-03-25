@@ -5,11 +5,12 @@ import ExternalLink from "../molecules/ExternalLink"
 import { FaGithub } from "react-icons/fa"
 import { FaLinkedin } from "react-icons/fa";
 import SectionHeading from "../molecules/SectionHeading"
-import { getProfile } from "@/lib/db"
+import { Profile } from "@/types";
+import { fetchData } from "@/utils/fetchData";
 
 const BASE_URL = process.env.BASE_URL as string
 const GetInTouch = async () => {
-    const profile = await getProfile();
+    const profile = await fetchData<Profile>(`${BASE_URL}/api/profile`);
 
     return (
        <Box>
