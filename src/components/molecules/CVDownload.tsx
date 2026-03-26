@@ -7,8 +7,8 @@ import FilePreviewer from './FilePreviewer';
 const CVDownload = () => {
     const [open, setOpen] = useState(false);
     return (
-        <Box display="flex">
-            <Button
+        <Box display="flex" gap={2}>
+            <Box
                 component="a"
                 download
                 href={"/Dipesh_CV.pdf"}
@@ -17,12 +17,12 @@ const CVDownload = () => {
                 <Label sx={{ fontSize: '0.8rem' }}>
                     Download My CV
                 </Label>
-            </Button>
-            <Button sx={{'&:hover':{backgroundColor:'transparent'}}} onClick={() => setOpen(true)}>
+            </Box>
+            <Box onClick={() => setOpen(true)}>
                 <Label>
                     Preview My CV
                 </Label>
-            </Button>
+            </Box>
             <Modal open={open} onClose={() => setOpen(false)}>
                 <Box sx={{
                     position: "absolute", top: "50%", left: "50%",

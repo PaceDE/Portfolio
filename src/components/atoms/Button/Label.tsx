@@ -5,10 +5,11 @@ interface NavButtonProps {
     children: ReactNode;
     active?:boolean
     sx?: SxProps<Theme>;
+    handleClick?:()=>{}
 }
-const Label = ({ children, sx, active=false }: NavButtonProps) => {
+const Label = ({ children, sx, active=false, handleClick }: NavButtonProps) => {
     return (
-        <Button sx={{
+        <Button onClick={handleClick} sx={{
             textTransform: "none", borderRadius: '6px',
             padding: '5px 12px',
             color:'text.secondary',
