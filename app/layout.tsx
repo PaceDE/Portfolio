@@ -21,8 +21,11 @@ const epilogue = Epilogue({
 })
 
 export const metadata: Metadata = {
-  title: 'Dipesh Shrestha — Web Developer',
-  description: 'Web Developer based in Kathmandu.',
+  title: "Dipesh Shrestha — Web Developer",
+  description: "Web Developer based in Kathmandu.",
+  viewport: "width=device-width, initial-scale=1.0",
+  authors:[{name:"Dipesh Shrestha"}],
+  keywords: ['frontend', 'react', 'next.js', 'tailwind', 'node.js', 'express', 'web developer'],
 }
 
 export default function RootLayout({
